@@ -29,14 +29,12 @@ function App() {
     }
   }
 
-  const handleRemoveFromCart = (e, id) => {
-    e.preventDefault();
+  const handleRemoveFromCart = (id) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== id);
     setCartItems(updatedCartItems);
   };
 
-  const increaseHandler = (e, item) => {
-    e.preventDefault();
+  const increaseHandler = (item) => {
     const updatedCartItems = cartItems.map((cartItem) =>
       cartItem.id === item.id
         ? { ...cartItem, count: cartItem.count + 1 }
@@ -45,8 +43,7 @@ function App() {
     setCartItems(updatedCartItems);
   };
 
-  const decreaseHandler = (e, item) => {
-    e.preventDefault();
+  const decreaseHandler = (item) => {
     const updatedCartItems = cartItems.map((cartItem) => {
       // cartItem.id === item.id
       //   ? { ...cartItem, count: cartItem.count - 1 }
